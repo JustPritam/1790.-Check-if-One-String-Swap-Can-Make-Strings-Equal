@@ -1,0 +1,23 @@
+class Solution {
+    public boolean areAlmostEqual(String s1, String s2) {
+        ArrayList<Character> A=new ArrayList<Character>();
+        ArrayList<Character> B=new ArrayList<Character>();
+        char a[]=s1.toCharArray();
+        char b[]=s2.toCharArray();
+        for(int i=0;i<s1.length();i++)
+        {
+            if(a[i]!=b[i]){
+                A.add(a[i]);
+                B.add(b[i]);
+            }
+        }
+        if(A.size()==B.size() && A.size()==0)
+            return true;
+        if(A.size()==B.size() && A.size()==2)
+        {
+            if (A.get(0) == B.get(1) && B.get(0) == A.get(1))
+                return true;
+        }
+        return false;
+    }
+}
